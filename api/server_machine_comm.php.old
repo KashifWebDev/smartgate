@@ -1,0 +1,181 @@
+<?php 
+  // Headers
+  header('Access-Control-Allow-Origin: *');
+  header('Content-Type: application/json');
+  header('Access-Control-Allow-Methods: POST');
+  header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+
+  require '../parts/db.php';
+
+
+  // Instantiate blog post object
+  $now = new DateTime();
+  $cur_time=$now->format('d-m-Y H:i:s');    
+  //echo $cur_time;
+  // Get ID
+
+
+  $data = json_decode(file_get_contents("php://input"));
+
+  if(isset($data->Machine_MAC) && isset($data->Action))
+{
+    $Machine_Mac = $data->Machine_MAC;
+    $sql = "SELECT * FROM user_and_devices WHERE machine_mac='".$Machine_Mac."'";
+    $result = mysqli_query($con, $sql);
+    $data = mysqli_fetch_array($result);
+    $count=mysqli_num_rows($result);
+    
+     $a = "SELECT * FROM users WHERE id=".$data["user_id"];
+     //echo $a;
+     $b = mysqli_query($con, $a);
+     $c = mysqli_fetch_assoc($b);
+     //print_r($c);
+     $email = $c["email"];
+     $password = $c["password"];
+     $schedule_exists = false;
+
+
+    $sql = "SELECT * FROM schedule WHERE machine_mac='".$Machine_Mac."'";
+    $result = mysqli_query($con, $sql);
+    if(mysqli_num_rows($result)) {
+        $schedule_exists=true;
+        $schedule = $row = mysqli_fetch_array($result);
+        $time_condition = $date_condition = false;
+
+        $start_time = $row["start_time"];
+        $end_time = $row["end_time"];
+        $start_date = $row["start_date"];
+        $end_date = $row["end_date"];
+        // ============= For TIme
+        $time = "2019-12-08";
+        date_default_timezone_set("Asia/Karachi");
+        //$date = date('m/d/Y h:i:s a', time());
+        $start_time = date("h:i:s a", strtotime($start_time));
+        $end_time = date("h:i:s a", strtotime($end_time));
+        $current_time = date('h:i:s a', time());
+        $current_date = date('Y-m-d', time());
+        //=============  For Date
+        $current_date = date('Y-m-d', time());
+        //======================== Listing all
+/*        echo 'Start Time: ' . $start_time . '<br>';
+        echo 'End Time: ' . $end_time . '<br>';
+        echo 'Start Date: ' . $start_date . '<br>';
+        echo 'End Date: ' . $end_date . '<br>';
+        echo 'Current Time: ' . $current_time . '<br>';
+        echo 'Current Date: ' . $current_date . '<br>';*/
+        if (($start_time < $current_time) && ($end_time > $current_time) ) {
+            //echo '<br> TIme Condition Matched!';
+            $time_condition = true;
+        } else {
+            //send mail for an unauthorised request for invalid time
+        }
+        if (($start_date < $current_date || $start_date == $current_date)
+            && ($end_date > $current_date || $end_date == $current_date)) {
+//            echo '<br> Date Condition Matched!';
+            $date_condition = true;
+        } else {
+            //send mail for an unauthorised request for invalid date
+        }
+    }
+
+
+    //print_r($data);
+    //echo $count;
+    if($count>0){
+//        echo '<br>COunt is zero on line85<br>';
+        if($schedule_exists){
+            $schedule_open_rqst = $schedule["request_send_open"];
+            $schedule_close_rqst = $schedule["request_send_close"];
+            $rqst = "";
+            /*            if($schedule["schedule_nature"]=="open" && $time_condition && $date_condition){
+                            // set request to OPEN;
+                            $qury="UPDATE user_and_devices SET server_request='Open' WHERE machine_mac='".$Machine_Mac."'";
+                            $qury1="UPDATE schedule SET request_set_open=true WHERE machine_mac='".$Machine_Mac."'";
+                            mysqli_query($con,$qury);
+                            mysqli_query($con,$qury1);
+                        }*/
+            if($current_time > $start_time && $current_time < $end_time && !$schedule_open_rqst){
+                // set request to OPEN;
+                $qury="UPDATE user_and_devices SET server_request='Open' WHERE machine_mac='".$Machine_Mac."'";
+                $qury1="UPDATE schedule SET request_send_open=1 WHERE machine_mac='".$Machine_Mac."'";
+                mysqli_query($con,$qury);
+                mysqli_query($con,$qury1);
+            }
+            if ($current_time > $end_time && !$schedule_close_rqst){
+            // set request to CLOSE;
+            $qury="UPDATE user_and_devices SET server_request='Close' WHERE machine_mac='".$Machine_Mac."'";
+            $qury1="UPDATE schedule SET request_send_close=1 WHERE machine_mac='".$Machine_Mac."'";
+            mysqli_query($con,$qury);
+            mysqli_query($con,$qury1);
+            }
+            $qury="SELECT * FROM user_and_devices WHERE machine_mac='".$Machine_Mac."'";
+            $a =mysqli_query($con,$qury);
+            //echo a.'--'.$qury;
+            $b = mysqli_fetch_assoc($a);
+            $rqst = $b["server_request"];
+            //Empty request in database
+            $qury1="UPDATE user_and_devices SET server_request='' WHERE machine_mac='".$Machine_Mac."'";
+            mysqli_query($con,$qury1);
+            echo json_encode(
+                array(
+                    'Request' => $rqst, //$data["server_request"], // Change server_rqeust to action for mobile requests
+                    'Event' => $schedule["event"],
+                    'Pos' => $schedule["positions"],
+                    'Exit' => 'ON',   //Dummy
+                    'Buzz' => 'ON',   //Dummy
+                    'Mobile_MAC' => $data["mobile_mac"],
+                    'Machine_MAC' => $data["machine_mac"],
+                    'User' => $email,
+                    'Password' => $password
+                )
+            );
+        }
+        if(!$schedule_exists){
+            echo json_encode(
+                array(
+                    'Request' => $data["server_request"], // Change server_rqeust to action for mobile requests
+                    //'Event' => $schedule["event"],
+                    //'Pos' => $schedule["positions"],
+                    //'Exit' => 'ON',   //Dummy
+                    //'Buzz' => 'ON',   //Dummy
+                    'Mobile_MAC' => $data["mobile_mac"],
+                    'Machine_MAC' => $data["machine_mac"],
+                    'User' => $email,
+                    'Password' => $password
+                )
+            );
+
+        }
+    } else{
+            $post_arr = array(
+                'Response' => 'NACK',
+                'Message' => 'No Data returned from Database!'
+            );
+            print_r(json_encode($post_arr));
+    }
+    
+    // Close connection
+    mysqli_close($con);
+
+}else{
+            echo json_encode(
+                  array(
+                      'Response' => 'NACK',
+                      'Message' => 'Error Occured While Processing Request'
+                  )
+                );
+}
+
+
+function success_msg($req, $mobile_mac, $mach_mac){
+    echo json_encode(
+      array(
+          'Response' => 'ACK',
+          'Mobile_MAC' => $mobile_mac,
+          'Machine_MAC' => $mach_mac
+      )
+    );
+  }
+
+
+?>

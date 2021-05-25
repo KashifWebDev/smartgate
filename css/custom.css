@@ -1,0 +1,465 @@
+#top-nav-font{
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+}#nav-font{
+     font-family: 'Exo 2', sans-serif;
+ }
+#device-view-font{
+    font-family: 'Oxygen', sans-serif;
+}
+#wrapper > ul > li.nav-item > a > span{
+    font-family: 'PT Sans', sans-serif;
+}
+#content-wrapper > div > ol > li:nth-child(1) > a,#content-wrapper > div > ol > li.breadcrumb-item{
+    font-family: 'Arimo', sans-serif;
+}
+#family-arimo{
+    font-family: 'Arimo', sans-serif;
+}
+#footer-text{
+    font-size: initial;
+}
+#flex{
+    display: flex;
+}
+.bg-green{
+    background-color: #28ff30d1;
+}.bg-red{
+     background-color: #ff000094;
+ }
+.device-action{
+    color: black;
+    font-weight: 600;
+    border: 1px solid grey;
+    padding: 5PX;
+    background: #cccccc;
+    border-radius: 11px;
+}
+#delete-btn-list{
+    background-color: #ff8181;
+}
+#edit-btn-list{
+    background-color: #7bff6b;
+}
+.device-action:hover{
+    text-decoration: none;
+    color: black;
+}
+.nav-item{
+    padding: 5px 0px;
+}
+ol.breadcrumb{
+    font-size: larger;
+}
+#wrapper{
+    margin-top: -20px;
+}
+#wrapper > ul > li > a{
+    font-size: medium;
+}
+#wrapper > ul > li > a > span{
+    font-size: medium;
+}
+#inline{
+    display: flex;
+}
+.device_heading h2{
+    margin: 30px 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.dutycycle-box a{
+    font-family: 'Arimo', sans-serif;
+    margin-left: 20px;
+    color: #343a40;
+    background-color: #a9a9a959;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: large;
+    text-decoration: none;
+    text-align: center;
+    height: auto;
+    width: 10%;
+}
+.dutycycle-box a:hover{
+    background-color: #c7c4c4;
+    box-shadow: 0px 0px 20px 0px #000000fa;
+    transition: .2s all;
+}
+.dutycycle-box-active{
+    margin-top: 10px;
+}
+.dutycycle-box-active p{
+    margin-left: 20px;
+    width: 10%;
+    text-align: center;
+    height: auto;
+    color: red;
+    font-weight: bold;
+    font-size: smaller;
+}
+#hidden-text-1,#hidden-text-2,#hidden-text-3,#hidden-text-4{
+    color: white;
+    font-family: 'Arimo', sans-serif;
+}
+#device_info{
+    font-size: initial;
+}
+#device_info > tbody > tr > td:nth-child(1){
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+}
+#device_info > tbody > tr > td:nth-child(2){
+    font-family: 'Arimo', sans-serif;
+}
+#device_img_1{
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin-right: 25%;
+    margin-top: -30px;
+}
+.device_info1{
+    padding: 2px 6px;
+    font-size: large;
+    text-transform: uppercase;
+}
+#device_status_img{
+    height:27px;
+    width:27px;
+}
+p#device_status_txt{
+    padding: 1px 5px;
+}
+.device_turnoff_btn{
+    background: #ff0505;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+#device_table_status{
+    padding-left: 12px;
+}
+.device_turnon_btn{
+    background:green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.turnon-btn a:link, .turnon-btn a:visited, .turnon-btn a:hover, .turnon-btn a:active{
+    color: white;
+    text-decoration: none;
+}
+.vertical-first-line{
+    height: 330px;
+    padding-left: 50px;
+}
+#font-pt-sans,.font-pt-sans{
+    font-family: 'PT Sans', sans-serif;
+}
+#valBox{
+    margin: 5px 20px;
+    font-size: large;
+}
+#input-range-btn{
+    background: #e6e6e6;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 8px;
+    text-decoration: none;
+}
+
+#top-nav-font {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+}
+
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#google_map {
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#infowindow-content .title {
+    font-weight: bold;
+}
+
+#infowindow-content {
+    display: none;
+}
+
+#google_map #infowindow-content {
+    display: inline;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+.pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+}
+#target {
+    width: 345px;
+}
+
+#draw_all_markers{ height:80%; width:80%; }
+/* END OF GOOGLE MAP. */
+
+
+
+
+
+
+
+
+.loading_circle {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+    url('../images/loading.gif')
+    50% 50%
+    no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .loading_circle {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   loading_circle element will be visible */
+body.loading .loading_circle {
+    display: block;
+}
+.card-user-details{
+    line-height: normal;
+}
+#card-hover-effect{
+    margin-bottom: 8px;
+}
+#card-hover-effect:hover{
+    box-shadow: 0px 0px 20px 0px #797979;
+    transition: .2s all;
+}
+#card-user-details-btn{
+    //display: none;
+}
+.border-custom-color{
+    border-color: #6363638f !important;
+}
+#custom_primary_btn{
+    border-color: #337ab7;
+    color: black;
+    background-color: white;
+}
+#custom_primary_btn:hover{
+    color:white !important;
+    background-color: #337ab7;
+    transition: .1s all;
+}
+#custom_warning_btn{
+    border-color: #f0ad4e;
+    color: black;
+    background-color: white;
+}
+#custom_warning_btn:hover{
+    color:white !important;
+    background-color: #f0ad4e;
+    transition: .1s all;
+}
+#custom_danger_btn{
+    border-color: #d43f3a;
+    color: black;
+    background-color: white;
+}
+#custom_danger_btn:hover{
+    color:white !important;
+    background-color: #d43f3a;
+    transition: .1s all;
+}
+#custom_success_btn{
+    border-color: #4cae4c;
+    color: black;
+    background-color: white;
+}
+#custom_brown_btn{
+    border-color: #4cae4c;
+    color: white;
+    background-color: #6c757d;
+}
+#custom_success_btn:hover{
+    color:white !important;
+    background-color: #4cae4c;
+    transition: .1s all;
+}
+.font-family-ubuntu{
+    font-family: 'Ubuntu', sans-serif;
+}
+.p-l-4{
+    padding-left: 6%;
+}
+.user-card-details{
+    display: block;
+
+}
+.custom-container{
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.user-img{
+    position: relative;
+}
+.upload-pic-btn{
+    position: absolute;
+    bottom: 9%;
+    left: 16%;
+    background: #000000a6;
+    color: white;
+    padding: 3px 11px 3px 18px;
+    border-radius: 0px 0px 32px 32px;
+    font-weight: bold;
+}
+.upload-pic-btn-guest{
+    position: absolute;
+    top: 48%;
+    left: 18%;
+    background: #000000a6;
+    color: white;
+    padding: 3px 11px 3px 18px;
+    border-radius: 0px 0px 32px 32px;
+    font-weight: bold;
+}
+button#upload-img-btn{
+    display: block;
+}
+#user-avartar:hover + button#upload-img-btn{
+    display: block !important;
+    transition: .2s all;
+}
+#info-favicon:hover{
+    color:black !important;
+}
+#user-avartar{
+    max-width: 145px;
+    //box-shadow: 0px 0px 13px #b9b5b5;
+}
+.m-l-3{
+    margin-left: 8%;
+}
+.m-l-1{
+    margin-left: 1%;
+}
+#bottom-border-user-dashboard{
+    border-bottom: 2px solid #6f6f6f1f;
+    margin-bottom: 2%;
+    border-radius: 6%;
+}
+.m-l-2px{
+    margin-left: 4px;
+}
+.set-width-100-center{
+    width: 100%;
+    place-content: center;
+}
+.m-t-2{
+    margin-top: 2%;
+}
+.p-l-2{
+    padding-left: 2%;
+}
+.color-white{
+    color: white !important;
+}
+.card_custom_footer{
+    padding: 0px 12px;
+}
+#device-view-font td{
+    border-left: none;
+    border-right: none;
+}
+#guest_user_pic_btn{
+    position: absolute;
+    position: absolute;
+}
+.active_status{
+    font-size: smaller;
+    /*display: grid;*/
+    float: right;
+    position: relative;
+    top: -8px;
+}
+.active_status span{
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+.active_status_online{
+    color: green;
+    background: #00800045;
+    border: 2px solid green;
+}
+.active_status_offline{
+    color: red;
+    background: #ff00003d;
+    border: 2px solid red;
+}

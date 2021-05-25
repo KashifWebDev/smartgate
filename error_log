@@ -1,0 +1,15 @@
+[07-Nov-2019 11:56:40 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[07-Nov-2019 11:57:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[07-Nov-2019 11:57:38 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[07-Nov-2019 11:59:04 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[07-Nov-2019 11:59:45 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[07-Nov-2019 12:00:22 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[07-Nov-2019 12:00:34 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/dashboard.php on line 2
+[19-Apr-2020 03:32:00 America/Boise] PHP Parse error:  syntax error, unexpected ''parts/db.php'' (T_CONSTANT_ENCAPSED_STRING) in /home2/accesson/public_html/smartgate/scheduling-page.php on line 1
+[19-Apr-2020 03:36:46 America/Boise] PHP Parse error:  syntax error, unexpected ''parts/db.php'' (T_CONSTANT_ENCAPSED_STRING) in /home2/accesson/public_html/smartgate/scheduling-page.php on line 1
+[19-Apr-2020 03:37:08 America/Boise] PHP Parse error:  syntax error, unexpected end of file in /home2/accesson/public_html/smartgate/scheduling-page.php on line 1
+[19-Apr-2020 03:51:00 America/Boise] PHP Parse error:  syntax error, unexpected ''parts/db.php'' (T_CONSTANT_ENCAPSED_STRING) in /home2/accesson/public_html/smartgate/scheduling-page.php on line 1
+[22-Apr-2020 06:54:55 America/Boise] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home2/accesson/public_html/smartgate/scheduling-page.php on line 13
+[19-Mar-2021 00:16:41 America/Boise] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in /home2/accesson/public_html/smartgate/dashboard.php on line 968
+[19-Mar-2021 00:17:07 America/Boise] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in /home2/accesson/public_html/smartgate/dashboard.php on line 968
+[19-Mar-2021 00:17:09 America/Boise] PHP Parse error:  syntax error, unexpected '$sql' (T_VARIABLE) in /home2/accesson/public_html/smartgate/dashboard.php on line 968

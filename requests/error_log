@@ -1,0 +1,33 @@
+[23-Mar-2020 05:06:47 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/turkvjwp/public_html/SimpleEnergy/modules/db.php on line 16
+[23-Mar-2020 05:06:47 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/turkvjwp/public_html/SimpleEnergy/index.php on line 32
+[23-Mar-2020 05:06:47 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/turkvjwp/public_html/SimpleEnergy/index.php on line 33
+[23-Mar-2020 05:08:02 America/New_York] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/turkvjwp/public_html/SimpleEnergy/index.php on line 33
+[19-Sep-2020 05:42:44 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:43:30 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:44:25 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:44:45 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:45:46 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:46:01 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:48:26 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:48:46 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:51:26 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:51:37 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:51:40 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:52:18 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:52:39 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:53:28 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:53:36 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:54:24 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 05:55:04 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:00:30 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:02:00 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:20:05 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:21:03 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:21:55 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:27:25 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:27:56 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:29:11 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:29:37 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[19-Sep-2020 06:33:58 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[10-Nov-2020 06:00:28 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2
+[10-Nov-2020 06:01:20 America/Boise] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/accesson/public_html/smartgate/parts/db.php on line 2

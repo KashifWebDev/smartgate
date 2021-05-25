@@ -1,0 +1,6 @@
+[06-Jan-2020 13:38:30 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'accesson_db_smart.categories' doesn't exist in /home2/accesson/public_html/smartgate/models/Category.php:33
+Stack trace:
+#0 /home2/accesson/public_html/smartgate/models/Category.php(33): PDOStatement->execute()
+#1 /home2/accesson/public_html/smartgate/api/category/read.php(17): Category->read()
+#2 {main}
+  thrown in /home2/accesson/public_html/smartgate/models/Category.php on line 33

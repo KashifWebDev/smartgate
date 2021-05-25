@@ -1,0 +1,12 @@
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+RewriteBase /
+
+
+
+## Forward Every Url to index file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ smart_gate/admin/user-details.php [L]
+RewriteRule ^(.*)$ SmartGate/admin/user-details.php [L]
