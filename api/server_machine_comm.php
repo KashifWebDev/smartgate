@@ -151,6 +151,8 @@ $time_condition = true;
 //                $action="";
 //            }
 
+
+
             if($current_time > $start_time && $current_time < $end_time  && !$schedule_open_rqst){
                 // For Open/Close Schedule
 //                echo "currently setting the action to $action";
