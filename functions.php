@@ -55,15 +55,13 @@ function send_notification($con, $message)
     $query = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($query);
     $tokens = $row["app_token"];
-//        echo $app_token;
-//        die();
+
 
     $url = 'https://fcm.googleapis.com/fcm/send';
     $fields = array(
         'registration_ids' => array($tokens),
         'data' => array('message' => $message)
     );
-//    print_r($fields);
     $server_key = "AAAAJ9TR7wM:APA91bG89Ri7cTBKbBV1w2axSdj3eAgflefPLNprlKEQ1DNh0A4Ylsu3VyovtHr5bmUwns8eaiKF_j65TrTqmCouOE0nm0cpvwMoTyc_OOt0-6hPeh3KmWW4MxuP69I76ev6GO42vUgo";
 
     $title = "Notification title";

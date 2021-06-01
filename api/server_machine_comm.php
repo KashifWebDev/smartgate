@@ -25,11 +25,6 @@
 
 
     date_default_timezone_set(get_timezone_from_mac($con, $Machine_Mac ));
-
-
-//    die(); exit();
-//    date_default_timezone_set(get_timezone_from_mac($con, $Machine_Mac ));
-
       $daylight_status = daylight($con, $Machine_Mac);
 
 
@@ -43,8 +38,7 @@
     }
 
     
-            $qury="UPDATE user_and_devices SET position='$pos', event='$event', relay_from_api='$relay'
-                     WHERE machine_mac='".$Machine_Mac."'";
+            $qury="UPDATE user_and_devices SET position='$pos', event='$event', relay_from_api='$relay' WHERE machine_mac='".$Machine_Mac."'";
             $a =mysqli_query($con,$qury);
     
      $a = "SELECT * FROM users WHERE id=".$data["user_id"];
@@ -65,7 +59,6 @@
             exit();die();
    }
 
-     // $csount=0;
     $sql = "SELECT * FROM schedule WHERE machine_mac='".$Machine_Mac."'";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result)) {
@@ -82,8 +75,6 @@
         $end_date = $row["end_date"];
         // ============= For TIme
         $time = "2019-12-08";
-//        require 'time_config.php';
-        //$date = date('m/d/Y h:i:s a', time());
         $start_time = date("h:i:s a", strtotime($start_time));
         $end_time = date("h:i:s a", strtotime($end_time));
         $current_time = date('h:i:s a', time());
@@ -136,20 +127,8 @@ $time_condition = true;
 
 
     if($count>0){
-//    if($count>0){
-//        echo '<br>COunt is zero on line85<br>';
         if($schedule_exists && $date_condition && $time_condition){
 //            echo "schedule Exists!";
-
-//            if($schedule["schedule_nature"]=="close" || $schedule["schedule_nature"]=="Close"){
-//                $action = "Close";
-//            }
-//            if($schedule["schedule_nature"]=="Open" || $schedule["schedule_nature"]=="open"){
-////                $action="Open";
-//                $action="Hold";
-////                echo "action is in OPEN";
-//            }
-//                echo "action is in close";
             // if relay is momentary, no close requests will be sent
             if($data["relay"]=="Momentary"){
                 $action="Open";
@@ -163,11 +142,15 @@ $time_condition = true;
                 $action=$Action;
                 $action='Hold';
             }
+            //If Event Is Hi, no action will be performed
+            if($schedule["event"] =="Hi"){
+                $action="";
+            }
+//            //If Event Is low, no action will be performed
+//            if($schedule["positions"] =="off"){
+//                $action="";
+//            }
 
-
-//            echo $current_time.' | '.$end_time;
-
-//            if($current_time > $start_time && $current_time < $end_time && !$schedule_open_rqst){
             if($current_time > $start_time && $current_time < $end_time  && !$schedule_open_rqst){
                 // For Open/Close Schedule
 //                echo "currently setting the action to $action";
@@ -178,7 +161,6 @@ $time_condition = true;
                     mysqli_query($con,$qury1);
                 }
             }
-//            if ($current_time > $end_time && !$schedule_close_rqst){
             if ($current_time > $end_time && !$schedule_close_rqst){
             // set request to CLOSE;
 //                echo "currently setting the action to Close(hardcoded)";
@@ -198,25 +180,9 @@ $time_condition = true;
 
             $b = mysqli_fetch_array($a);
             $rqst = $b["server_request"];
-
-            //Empty request in database
-//            $qury1="UPDATE user_and_devices SET server_request='' WHERE machine_mac='".$Machine_Mac."'";
-            // mysqli_query($con,$qury1);
-
-//            $a = $schedule["start_date"].' '.$schedule["start_time"];
-//            $b = $schedule["end_date"].' '.$schedule["end_time"];
-////            echo $b;
-////            die();exit();
-//            $diff = strtotime($b) - strtotime($a);
-////            echo $diff;
-////            die();exit();
-///
-///
-
             $alarm = $data["alarm"];
             if($data["alarm"]=="none")
                 $alarm = 0;
-//echo "DDD: ".$data["relay"];
             if($data["relay"]=="Momentary") {
                 echo json_encode(
                     array(
