@@ -125,7 +125,75 @@ $time_condition = true;
     //print_r($data);
     //echo $count;
 
+    //Check for guest schedules
+    $sql = "SELECT * FROM schedule_guest WHERE machine_mac='".$Machine_Mac."'";
+    $result_guest = mysqli_query($con, $sql);
+    if(mysqli_num_rows($result_guest)) {
+        $schedule_guests = mysqli_fetch_array($result_guest);
 
+        $start_time = $schedule_guests["start_time"];
+        $end_time = $schedule_guests["end_time"];
+        $start_date = $schedule_guests["start_date"];
+        $end_date = $schedule_guests["end_date"];
+        // ============= For TIme
+        $time = "2019-12-08";
+        $start_time = date("h:i:s a", strtotime($start_time));
+        $end_time = date("h:i:s a", strtotime($end_time));
+        $current_time = date('h:i:s a', time());
+        $current_date = date('Y-m-d', time());
+
+        $start_time = strtotime($start_time);
+        $end_time = strtotime($end_time);
+        $current_time = strtotime($current_time);
+
+
+        $date_condition = $date_condition = false;
+        if (($start_time < $current_time) && ($end_time > $current_time) ) {
+//            echo '<br> TIme Condition Matched!';
+            $time_condition = true;
+        } else {
+            //send mail for an unauthorised request for invalid time
+        }
+        if (($start_date < $current_date || $start_date == $current_date)
+            && ($end_date > $current_date || $end_date == $current_date)) {
+//            echo '<br> Date Condition Matched!';
+            $date_condition = true;
+        }
+        else {
+            $date_condition = $date_condition = false;
+            //send mail for an unauthorised request for invalid date
+        }
+    $action_guest = "";
+        $schedule_open_rqst = $schedule_guests["request_send_open"];
+        $schedule_close_rqst = $schedule_guests["request_send_close"];
+
+
+        if($schedule_guests["event"]=="off"){
+            $action_guest = "";
+        }
+        if($schedule_guests["event"]=="on"){ //Set the action here
+            if($current_time > $start_time && $current_time < $end_time  && !$schedule_open_rqst){
+                // For Open/Close Schedule
+//                echo "currently setting the action to $action";
+                    $qury="UPDATE user_and_devices SET server_request='Open' WHERE machine_mac='".$Machine_Mac."'";
+                    $qury1="UPDATE schedule_guest SET request_send_open=1 WHERE machine_mac='".$Machine_Mac."'";
+                    mysqli_query($con,$qury);
+                    mysqli_query($con,$qury1);
+            }
+            if ($current_time > $end_time && !$schedule_close_rqst){
+                // set request to CLOSE;
+//                echo "currently setting the action to Close(hardcoded)";
+                $qury="UPDATE user_and_devices SET server_request='Close' WHERE machine_mac='".$Machine_Mac."'";
+                $qury1="UPDATE schedule_guest SET request_send_close=1 WHERE machine_mac='".$Machine_Mac."'";
+                mysqli_query($con,$qury);
+                mysqli_query($con,$qury1);
+            }
+        }
+
+    } //End of guest schedule exists
+
+
+    //Check for normal users schedules
     if($count>0){
         if($schedule_exists && $date_condition && $time_condition){
 //            echo "schedule Exists!";

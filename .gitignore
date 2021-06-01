@@ -1,7 +1,5 @@
-
-
 ./parts/
-
-
 *.zip
 *.rar
+images/users
+images/devices
