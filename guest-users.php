@@ -249,7 +249,7 @@ if(isset($_POST["link-device"])){
             $sql = "SELECT a.id AS user_row_id,a.*,b.id AS devices_row_id,b.* FROM users a, user_and_devices b
                     WHERE a.parent_id = $user_session_id AND b.parent_id = $user_session_id AND b.is_guest=1
                      GROUP BY b.id";
-echo $sql;
+//echo $sql;
 
                 require 'cards-guest-users.php';
             ?>

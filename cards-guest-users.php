@@ -171,6 +171,7 @@ $usr_session_id = $_SESSION["id"];
                                 <input type="hidden" name="user_id" value="<?php echo $row["id"]; ?>">
                                 <div class="row">
                                     <div class="col-md-6">
+                                        <input type="hidden" name="d_mac" value="<?php echo $row["machine_mac"]; ?>">
                                             <div class="form-group">
                                                 <label for="email" id="top-nav-font">Schedule Name:</label>
                                                 <input id="nav-font" type="text " class="form-control" placeholder="Schedule Name" id="email" name="name" required>
@@ -389,7 +390,7 @@ if (isset($_POST["add-schedule"])) {
     $parent_id = $_POST["parent_id"];
     $user_id = $_POST["user_id"];
     $week_days = $_POST["weekdays"];
-
+    $d_mac = $_POST["d_mac"];
 
     if(empty($start_date))
         $start_date='2018-04-18';
@@ -419,9 +420,9 @@ if (isset($_POST["add-schedule"])) {
                             ';
     }
 
-    $sql = "INSERT INTO schedule_guest (sch_name, relay, parent_id, user_id, start_date, 
+    $sql = "INSERT INTO schedule_guest (sch_name, relay, parent_id, user_id, start_date, machine_mac,
                                         end_date, start_time, end_time, weekday, event, positions, schedule_nature)
-                                        VALUES ('$name', '$relay', $parent_id, $user_id, '$start_date', 
+                                        VALUES ('$name', '$relay', $parent_id, $user_id, '$start_date', '$d_mac', 
                                                 '$end_date', '$start_time', '$end_time', '$days', '$event','$position', '$nature');
                     ";
     if (mysqli_query($con, $sql)) {
