@@ -758,6 +758,69 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
     $action = $_GET["action"];
     $row_id = $_GET["row_id"];
 
+    $sql = "SELECT * FROM schedule WHERE machine_mac = '$machine_mac'";
+    $res = mysqli_query($con, $sql);
+    if(mysqli_num_rows($res)){
+        $row = mysqli_fetch_array($res);
+        $start_time = $row["start_time"];
+        $end_time = $row["end_time"];
+        $start_date = $row["start_date"];
+        $end_date = $row["end_date"];
+        // ============= For TIme
+        $time = "2019-12-08";
+        $start_time = date("h:i:s a", strtotime($start_time));
+        $end_time = date("h:i:s a", strtotime($end_time));
+        $current_time = date('h:i:s a', time());
+        $current_date = date('Y-m-d', time());
+
+        $start_time = strtotime($start_time);
+        $end_time = strtotime($end_time);
+        $current_time = strtotime($current_time);
+
+        $current_date = date('Y-m-d', time());
+        $date_condition = $date_condition = false;
+
+        if (($start_time < $current_time) && ($end_time > $current_time) ) {
+//            echo '<br> TIme Condition Matched!';
+            $time_condition = true;
+        } else {
+            //send mail for an unauthorised request for invalid time
+        }
+        if (($start_date < $current_date || $start_date == $current_date)
+            && ($end_date > $current_date || $end_date == $current_date)) {
+//            echo '<br> Date Condition Matched!';
+            $date_condition = true;
+        }
+        else {
+            $date_condition = $date_condition = false;
+            //send mail for an unauthorised request for invalid date
+        }
+
+        if($time_condition && $date_condition){
+            if($action=="Hold"){
+                echo '
+                <script>
+                    alert("Schedule is active! No manual requests will be served!");
+                    window.location.replace("dashboard.php");
+                </script> ';
+            }
+            if($action=="Close"){
+                echo '
+                <script>
+                    alert("Schedule is active! No manual requests will be served!");
+                    window.location.replace("dashboard.php");
+                </script> ';
+            }
+            if($action=="Open"){
+                echo '
+                <script>
+                    alert("Schedule is active! No manual requests will be served!");
+                    window.location.replace("dashboard.php");
+                </script> ';
+            }
+        }
+    }
+
     $sql = "SELECT * FROM user_and_devices WHERE id = '$row_id'";
     $res = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($res);
