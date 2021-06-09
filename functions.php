@@ -45,11 +45,11 @@ function total_alerts_mac($con, $user_id)
 
 function send_notification($con, $message)
 {
-//    echo "
-//        <script>
-//            alert('Message: $message');
-//        </script>
-//    ";
+    echo "
+        <script>
+            alert('Message: $message');
+        </script>
+    ";
     //Get token form db
     $sql = "SELECT * from users WHERE id=" . $_SESSION['id'];
     $query = mysqli_query($con, $sql);
