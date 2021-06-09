@@ -28,7 +28,7 @@
     // if(mysqli_query($con, $a)){
     //     echo "done clear  ".$a;
     // }
-    mysqli_query($con, $a);
+//    mysqli_query($con, $a);
 
   
     $sql = "INSERT INTO machine_req_recievedack (response, mobile_mac, machine_mac)
