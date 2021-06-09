@@ -1036,11 +1036,6 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
 
         $sql = "UPDATE  user_and_devices SET server_request='$action' WHERE (user_id=$id AND machine_mac='$machine_mac' AND device_name='$device_name')";
 
-        echo "
-        <script>
-            alert('Qry: $sql');
-        </script>
-    ";echo $sql;exit(); die();
 
         mysqli_query($con, $sql);
 
