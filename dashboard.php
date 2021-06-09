@@ -1040,7 +1040,7 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
         <script>
             alert('Qry: $sql');
         </script>
-    ";
+    ";echo $sql;exit(); die();
 
         mysqli_query($con, $sql);
 
