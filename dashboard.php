@@ -721,15 +721,6 @@ if(isset($_POST["link-device"])){
     $query = "SELECT * FROM user_and_devices WHERE machine_mac = '".$device_mac."'";
     $select = mysqli_query($con, $query);
 
-//    if(mysqli_num_rows($select)) {
-//        unset($_POST["link-device"]);
-//        echo '<script>alert("Deivce Mac is already being used!");
-//                window.location.replace("dashboard.php");
-//                </script>';
-//        exit();
-//
-//    }
-
     $now = new DateTime();
     $cur_time=$now->format('d-m-Y H:i:s');
 
@@ -757,6 +748,7 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
     $machine_mac = $_GET["machine_mac"];
     $action = $_GET["action"];
     $row_id = $_GET["row_id"];
+
 
     $sql = "SELECT * FROM schedule WHERE machine_mac = '$machine_mac'";
     $res = mysqli_query($con, $sql);
