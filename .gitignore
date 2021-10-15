@@ -3,3 +3,4 @@
 *.rar
 images/users
 images/devices
+parts/db.php

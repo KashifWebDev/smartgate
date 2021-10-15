@@ -33,9 +33,10 @@ if(isset($data->Action) && isset($data->Mobile_MAC) && isset($data->Machine_MAC)
     $buzz = $data->Buzz;
     $relay = $data->Relay;
 
-
-    $a = "UPDATE user_and_devices SET server_request='' WHERE machine_mac='$mach_mac'";
-    mysqli_query($con, $a);
+    if($device_action!="Nack"){
+        $a = "UPDATE user_and_devices SET server_request='' WHERE machine_mac='$mach_mac'";
+        mysqli_query($con, $a);
+    }
 
     $aa = "SELECT * FROM user_and_devices WHERE machine_mac='$mach_mac'";
     $bb = mysqli_query($con, $aa);
