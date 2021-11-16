@@ -27,7 +27,7 @@ if(isset($_POST["update-user"])){
     $select = mysqli_query($connectionID, $my_query) or exit(mysqli_error($connectionID));
     if(mysqli_num_rows($select)) {
         echo '
-                <script>act
+                <script>
                     alert("Email already in use!");
                     window.location.replace("dashboard.php");
                 </script>

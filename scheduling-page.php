@@ -74,21 +74,23 @@ require 'parts/head.php'; ?>
                                         <label for="email" id="top-nav-font">End Time:</label>
                                         <input id="nav-font" type="time" class="form-control" name="end_time">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="pwd" id="top-nav-font" style="display: flex;">Event Input:</label>
-                                        <select id="nav-font" class="form-control" name="event">
-                                            <option value="Hi">ON</option>
-                                            <option value="Lo">OFF</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd" id="top-nav-font" style="display: flex;">Position Input:</label>
-                                        <select id="nav-font" class="form-control" name="position">
-                                            <option value="None">None</option>
-                                            <option value="on">ON</option>
-                                            <option value="off">OFF</option>
-                                        </select>
-                                    </div>
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="pwd" id="top-nav-font" style="display: flex;">Event Input:</label>-->
+<!--                                        <select id="nav-font" class="form-control" name="event">-->
+<!--                                            <option value="Hi">ON</option>-->
+<!--                                            <option value="Lo">OFF</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+                                    <input type="hidden" value="Hi" name="event">
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="pwd" id="top-nav-font" style="display: flex;">Position Input:</label>-->
+<!--                                        <select id="nav-font" class="form-control" name="position">-->
+<!--                                            <option value="None">None</option>-->
+<!--                                            <option value="on">ON</option>-->
+<!--                                            <option value="off">OFF</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+                                    <input type="hidden" value="on" name="position">
                                     <!--                                    <div class="form-group">-->
                                     <!---->
                                     <!--                                        <label for="pwd" id="top-nav-font" style="display: flex;">Schedule Type:</label>-->
