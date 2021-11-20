@@ -404,6 +404,7 @@ function get_timezone_from_mac($con, $mac){
     $sql = "SELECT * FROM user_and_devices WHERE machine_mac='$mac'";
     $res = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($res);
+    echo get_timezone($con, $row["timezone"]); exit(); die();
     return get_timezone($con, $row["timezone"]);
 //    return "Asia/Karachi";
 }
