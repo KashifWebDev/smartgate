@@ -759,7 +759,13 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
         $start_date = $row["start_date"];
         $end_date = $row["end_date"];
         // ============= For TIme
-        $time = "2019-12-08";
+
+
+        $s = "SELECT * FROM user_and_devices WHERE id = '$row_id'";
+        $s1 = mysqli_query($con, $sql);
+        $s2 = mysqli_fetch_array($res);
+        date_default_timezone_set(get_timezone($con, $s2['timezone']));
+
         $start_time = date("h:i:s a", strtotime($start_time));
         $end_time = date("h:i:s a", strtotime($end_time));
         $current_time = date('h:i:s a', time());

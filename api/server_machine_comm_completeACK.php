@@ -43,7 +43,7 @@ if(isset($data->Action) && isset($data->Mobile_MAC) && isset($data->Machine_MAC)
     $row = mysqli_fetch_array($bb);
     device_current_time($row['timezone']);
 
-    echo date_default_timezone_set(get_timezone($con, $row['timezone']));
+    date_default_timezone_set(get_timezone($con, $row['timezone']));
 //    date_default_timezone_set("Asia/Karachi");
 
 
