@@ -405,7 +405,7 @@ function get_timezone_from_mac($con, $mac){
     $res = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($res);
     return get_timezone($con, $row["timezone"]);
-//    return "Asia/Karachi";
+///    return "Asia/Karachi";
 }
 function daylight($con, $mac){
     $sql = "SELECT * FROM user_and_devices WHERE machine_mac='$mac'";
