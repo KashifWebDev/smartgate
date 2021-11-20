@@ -761,9 +761,9 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
         // ============= For TIme
 
 
-        $s = "SELECT * FROM user_and_devices WHERE id = '$row_id'";
-        $s1 = mysqli_query($con, $sql);
-        $s2 = mysqli_fetch_array($res);
+        $s = "SELECT * FROM user_and_devices WHERE id = $row_id";
+        $s1 = mysqli_query($con, $s);
+        $s2 = mysqli_fetch_array($s1);
         echo $s;
         print_r($s2);
         date_default_timezone_set(get_timezone($con, $s2['timezone']));
