@@ -42,13 +42,15 @@ if(isset($data->Action) && isset($data->Mobile_MAC) && isset($data->Machine_MAC)
     $bb = mysqli_query($con, $aa);
     $row = mysqli_fetch_array($bb);
     device_current_time($row['timezone']);
+
+    echo date_default_timezone_set($row['timezone']);
 //    date_default_timezone_set("Asia/Karachi");
 
 
     $time_now = date('Y-m-d H:i:s');  //Just for database data_time record
 
 
-    echo "TimeZone:     ".$row['timezone'];
+    echo "   TimeZone:     ".$row['timezone'];
     echo "<br>Time Now:       ".$time_now; exit(); die();
 
     $sql = "SELECT * FROM alert WHERE machine_mac= '$mach_mac'";
@@ -195,7 +197,6 @@ if(isset($data->Action) && isset($data->Mobile_MAC) && isset($data->Machine_MAC)
 }
 
 function device_current_time($timezone){
-    date_default_timezone_set($timezone);
 }
 function send_alert_app_email($con, $msg, $body, $email, $u_name, $mach_mac)
 {
