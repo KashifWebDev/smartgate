@@ -47,8 +47,9 @@ if(isset($data->Action) && isset($data->Mobile_MAC) && isset($data->Machine_MAC)
 
     $time_now = date('Y-m-d H:i:s');  //Just for database data_time record
 
-echo "TimeZone: ".$row['timezone'];
-echo "<br>Time Now: ".$time_now; exit(); die();
+
+    echo "TimeZone:      ".$row['value'];
+    echo "<br>Time Now:       ".$time_now; exit(); die();
 
     $sql = "SELECT * FROM alert WHERE machine_mac= '$mach_mac'";
 //    echo $sql;die();
