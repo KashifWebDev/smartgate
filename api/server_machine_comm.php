@@ -269,7 +269,7 @@ $time_condition = true;
                     )
                 );
             }
-            if($data["relay"]=="Latch") {
+            elseif($data["relay"]=="Latch") {
                 echo json_encode(
                     array(
                         'Request' => $rqst, //$data["server_request"], // Change server_rqeust to action for mobile requests
