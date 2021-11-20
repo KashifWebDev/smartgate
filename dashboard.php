@@ -764,8 +764,6 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
         $s = "SELECT * FROM user_and_devices WHERE id = $row_id";
         $s1 = mysqli_query($con, $s);
         $s2 = mysqli_fetch_array($s1);
-        echo $s;
-        print_r($s2);
         date_default_timezone_set(get_timezone($con, $s2['timezone']));
 
         $start_time = date("h:i:s a", strtotime($start_time));
@@ -774,9 +772,9 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
         $current_date = date('Y-m-d', time());
 
 
-
-    echo "   TimeZone:     ".$s2['timezone'];
-    echo "<br>Time Now:       ".$current_time.'   '.$current_date; exit(); die();
+//
+//    echo "   TimeZone:     ".$s2['timezone'];
+//    echo "<br>Time Now:       ".$current_time.'   '.$current_date; exit(); die();
 
         $start_time = strtotime($start_time);
         $end_time = strtotime($end_time);
