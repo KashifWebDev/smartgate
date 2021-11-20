@@ -771,6 +771,11 @@ if(isset($_GET["action"]) and isset($_GET["machine_mac"]) and isset($_GET["row_i
         $current_time = date('h:i:s a', time());
         $current_date = date('Y-m-d', time());
 
+
+
+    echo "   TimeZone:     ".$s2['timezone'];
+    echo "<br>Time Now:       ".$current_time.'   '.$current_date; exit(); die();
+
         $start_time = strtotime($start_time);
         $end_time = strtotime($end_time);
         $current_time = strtotime($current_time);
