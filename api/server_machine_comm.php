@@ -95,12 +95,12 @@
         //=============  For Date
         $current_date = date('Y-m-d', time());
         //======================== Listing all
-        echo 'Start Time: ' . $start_time . '<br>';
-        echo 'End Time: ' . $end_time . '<br>';
-        echo 'Start Date: ' . $start_date . '<br>';
-        echo 'End Date: ' . $end_date . '<br>';
-        echo 'Current Time: ' . $current_time . '<br>';
-        echo 'Current Date: ' . $current_date . '<br>';
+//        echo 'Start Time: ' . $start_time . '<br>';
+//        echo 'End Time: ' . $end_time . '<br>';
+//        echo 'Start Date: ' . $start_date . '<br>';
+//        echo 'End Date: ' . $end_date . '<br>';
+//        echo 'Current Time: ' . $current_time . '<br>';
+//        echo 'Current Date: ' . $current_date . '<br>';
 /**/
 
         $date_condition = $date_condition = false;
