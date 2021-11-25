@@ -21,7 +21,7 @@ if(isset($_POST["mac"])){
         $bb = mysqli_query($con, $aa);
         $row = mysqli_fetch_array($bb);
 
-        date_default_timezone_set($con, device_current_time($row['timezone']));
+        date_default_timezone_set(device_current_time($con, $row['timezone']));
 
         $now = new DateTime();
         $cur_time=$now->format('H:i:s');
