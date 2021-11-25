@@ -27,7 +27,7 @@ if(isset($_POST["mac"])){
         $cur_time=$now->format('H:i:s');
 
         $plustime = date("H:i:s", (strtotime($date_time) + 40));
-        echo 'Current: '.$cur_time.'<br>'.'Database: '.$date_time.'<br>'.'+10sec: '.$plustime;
+//        echo 'Current: '.$cur_time.'<br>'.'Database: '.$date_time.'<br>'.'+10sec: '.$plustime;
 
         if($plustime>$cur_time){
 //            echo "yes";
@@ -48,7 +48,6 @@ function device_current_time($con, $timezone){
         $sql = "SELECT * FROM timezones WHERE id=$timezone";
         $query = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($query);
-        echo $row["value"];
         return $row["value"];
 }
 
