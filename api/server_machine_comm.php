@@ -196,7 +196,7 @@ $time_condition = true;
     //Check for normal users schedules
     if($count>0){
         if($schedule_exists && $date_condition && $time_condition){
-//            echo "schedule Exists!";
+            echo "schedule Exists!";
             // if relay is momentary, no close requests will be sent
             if($data["relay"]=="Momentary"){
                 $action="Open";
