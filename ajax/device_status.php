@@ -46,7 +46,10 @@ else{
 }
 
 function device_current_time($timezone){
-    date_default_timezone_set($timezone);
+        $sql = "SELECT * FROM timezones WHERE id=$id";
+        $query = mysqli_query($con, $sql);
+        $row = mysqli_fetch_array($query);
+        date_default_timezone_set($row["value"]);
 }
 
 ?>
