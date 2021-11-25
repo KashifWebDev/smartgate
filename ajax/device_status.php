@@ -21,7 +21,7 @@ if(isset($_POST["mac"])){
         $bb = mysqli_query($con, $aa);
         $row = mysqli_fetch_array($bb);
 
-        date_default_timezone_set(device_current_time($row['timezone']));
+        date_default_timezone_set($con, device_current_time($row['timezone']));
 
         $now = new DateTime();
         $cur_time=$now->format('H:i:s');
@@ -44,8 +44,8 @@ else{
     echo '<span class="active_status_offline">MAC not found</span>';
 }
 
-function device_current_time($timezone){
-        $sql = "SELECT * FROM timezones WHERE id=$id";
+function device_current_time($con, $timezone){
+        $sql = "SELECT * FROM timezones WHERE id=$timezone";
         $query = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($query);
         echo $row["value"];
