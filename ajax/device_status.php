@@ -48,6 +48,7 @@ function device_current_time($timezone){
         $sql = "SELECT * FROM timezones WHERE id=$id";
         $query = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($query);
+        echo $row["value"];
         return $row["value"];
 }
 
