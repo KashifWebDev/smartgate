@@ -81,7 +81,7 @@ require 'parts/head.php'; ?>
 <!--                                            <option value="Lo">OFF</option>-->
 <!--                                        </select>-->
 <!--                                    </div>-->
-                                    <input type="hidden" value="Hi" name="event">
+                                    <input type="hidden" value="Lo" name="event">
 <!--                                    <div class="form-group">-->
 <!--                                        <label for="pwd" id="top-nav-font" style="display: flex;">Position Input:</label>-->
 <!--                                        <select id="nav-font" class="form-control" name="position">-->
