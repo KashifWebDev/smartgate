@@ -20,7 +20,8 @@ if(isset($_POST["mac"])){
         $aa = "SELECT * FROM user_and_devices WHERE machine_mac='$m'";
         $bb = mysqli_query($con, $aa);
         $row = mysqli_fetch_array($bb);
-        device_current_time($row['timezone']);
+
+        date_default_timezone_set(device_current_time($row['timezone']));
 
         $now = new DateTime();
         $cur_time=$now->format('H:i:s');
@@ -47,7 +48,7 @@ function device_current_time($timezone){
         $sql = "SELECT * FROM timezones WHERE id=$id";
         $query = mysqli_query($con, $sql);
         $row = mysqli_fetch_array($query);
-        date_default_timezone_set($row["value"]);
+        return $row["value"];
 }
 
 ?>
