@@ -223,7 +223,7 @@ $time_condition = true;
 
             if($current_time > $start_time && $current_time < $end_time  && !$schedule_open_rqst){
                 // For Open/Close Schedule
-                echo "currently setting the action to $action";
+//                echo "currently setting the action to $action";
                     if($action!="" && !empty($action)){
                     $qury="UPDATE user_and_devices SET server_request='$action' WHERE machine_mac='".$Machine_Mac."'";
                     $qury1="UPDATE schedule SET request_send_open=1 WHERE machine_mac='".$Machine_Mac."'";
