@@ -119,6 +119,33 @@
             $date_condition = $date_condition = false;
             //send mail for an unauthorised request for invalid date
         }
+
+        $action_guest = "";
+        $schedule_open_rqst = $schedule["request_send_open"];
+        $schedule_close_rqst = $schedule["request_send_close"];
+
+
+        if($schedule["event"]=="off"){
+            $action_guest = "";
+        }
+        if($schedule["event"]=="on"){ //Set the action here
+            if($current_time > $start_time && $current_time < $end_time  && !$schedule_open_rqst){
+                // For Open/Close Schedule
+//                echo "currently setting the action to $action";
+                $qury="UPDATE user_and_devices SET server_request='Open' WHERE machine_mac='".$Machine_Mac."'";
+                $qury1="UPDATE schedule_guest SET request_send_open=1 WHERE machine_mac='".$Machine_Mac."'";
+                mysqli_query($con,$qury);
+                mysqli_query($con,$qury1);
+            }
+            if ($current_time > $end_time && !$schedule_close_rqst){
+                // set request to CLOSE;
+//                echo "currently setting the action to Close(hardcoded)";
+                $qury="UPDATE user_and_devices SET server_request='Close' WHERE machine_mac='".$Machine_Mac."'";
+                $qury1="UPDATE schedule_guest SET request_send_close=1 WHERE machine_mac='".$Machine_Mac."'";
+                mysqli_query($con,$qury);
+                mysqli_query($con,$qury1);
+            }
+        }
     }
 $time_condition = true;
 
